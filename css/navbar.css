@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #1C4381;
+    --color-white: #fff;
+    --color-black: #000;
+    --font1: "Poppins", sans-serif;
+}
+
+body {
+    font-family: var(--font1);
+}
+
+/* container css */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+@media (max-width: 639px) {
+    .container {
+        max-width: 100%;
+        padding: 0 1rem;
+        /* 16px padding */
+    }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+    .container {
+        max-width: 640px;
+        padding: 0 1.25rem;
+        /* 20px padding */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        max-width: 768px;
+        padding: 0 1.5rem;
+        /* 24px padding */
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .container {
+        max-width: 1024px;
+        padding: 0 2rem;
+        /* 32px padding */
+    }
+}
+
+@media (min-width: 1280px) and (max-width: 1399px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Navbar Base */
+header .navbar {
+    width: 100%;
+    background: var(--color-white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Navbar Container */
+header .navbar .nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+}
+
+header .navbar .nav-content .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .navbar .nav-content .logo img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+
+header .navbar .nav-content .logo a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+header .navbar .nav-content .logo span {
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+/* Desktop Menu */
+header .navbar .nav-content .nav-menu {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    list-style: none;
+}
+
+header .navbar .nav-content .nav-menu li a {
+    text-decoration: none;
+    color: var(--color-black);
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+header .navbar .nav-content .nav-menu li a:hover,
+header .navbar .nav-content .nav-menu li a.active {
+    color: var(--color-primary);
+}
+
+/* Mobile Toggle */
+.nav-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--color-primary);
+}
+
+@media (max-width: 900px) {
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    header .navbar .nav-content .nav-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background: var(--color-white);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 10px 10px;
+    }
+
+    header .navbar .nav-content .nav-menu.active {
+        max-height: 300px;
+    }
+
+    header .navbar .nav-content .nav-menu li {
+        width: 100%;
+        border-bottom: 1px solid var(--color-white);
+    }
+
+    header .navbar .nav-content .nav-menu li a {
+        display: block;
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 18px;
+        color: var(--color-black);
+    }
+}
+
+/* Hamburger Button */
+.nav-toggle {
+    display: none;
+    width: 30px;
+    height: 22px;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+/* Hamburger lines */
+.nav-toggle span {
+    width: 100%;
+    height: 3px;
+    background: var(--color-primary);
+    display: block;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+
+/* header .navbar .nav-content .nav-menu is active → animate into X */
+.nav-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+@media (max-width: 900px) {
+    .nav-toggle {
+        display: flex;
+    }
+}
+
+/* Product Section */
+section.product-section {
+    padding: 30px 0;
+}
+
+.product-link {
+    text-decoration: none;
+    display: contents;
+}
+
+/* Title */
+section.product-section .section-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: var(--color-black);
+}
+
+section.product-section .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* Product Box */
+section.product-section .product-grid .product-box {
+    background: var(--color-white);
+    border: 1px solid #dcdcdc;
+    border-radius: 12px;
+    /* padding: 18px; */
+    text-align: center;
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+section.product-section .product-grid .product-box img {
+    width: 100%;
+    height: 260px;
+    object-fit: contain;
+    background: #f5f5f5;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+/* Product Description Box */
+section.product-section .product-grid .product-box .product-des {
+    padding: 15px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Title */
+section.product-section .product-grid .product-box .product-des h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-black);
+    margin: 0;
+    padding: 0;
+}
+
+/* Button */
+section.product-section .product-grid .product-box .product-des .btn {
+    display: inline-block;
+    padding: 6px 18px;
+    border-radius: 8px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 18px;
+    border: 2px solid var(--color-primary);
+    transition: 0.3s ease;
+}
+
+section.product-section .product-grid .product-box .product-des .btn:hover {
+    background: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    section.product-section .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    section.product-section .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section.product-section .product-grid .product-box img {
+        height: 270px;
+        width: 100%;
+    }
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #25D366;
+    color: #fff;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    align-items: center;
+    font-size: 26px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Scroll to Top Button */
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--color-primary);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 999;
+    transition: 0.3s;
+}
+
+.scroll-top:hover {
+    transform: scale(1.15);
+}
+
+/* footer */
+.footer {
+    background: var(--color-primary);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--color-white);
+    font-size: 14px;
+    margin: 0;
+    font-family: var(--font1);
+}
